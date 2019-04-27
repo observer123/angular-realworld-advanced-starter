@@ -27,7 +27,7 @@ const routes: Routes = [
         pathMatch: 'full'
       },
       {
-        path: 'post/:id',
+        path: 'post/:slug',
         component: PostComponent
       },
       {
