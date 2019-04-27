@@ -5,8 +5,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { PostsComponent } from './posts/posts/posts.component';
 import { PostComponent } from './posts/post/post.component';
 import { EditorComponent } from './posts/editor/editor.component';
-import { NOTFOUND } from 'dns';
-import { NotFountComponent } from './not-fount/not-fount.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -40,10 +39,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
-  }
+  },
   {
     path: '**',
-    component: NotFountComponent
+    component: NotFoundComponent
   }
 ];
 
