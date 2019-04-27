@@ -9,36 +9,13 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: MainComponent,
-    children: [
-      {
-        path: '',
-        redirectTo: 'posts',
-        pathMatch: 'full'
-      },
-      {
-        path: 'posts',
-        component: PostsComponent
-      },
-      {
-        path: 'post',
-        redirectTo: 'posts',
-        pathMatch: 'full'
-      },
-      {
-        path: 'post/:slug',
-        component: PostComponent
-      },
-      {
-        path: 'create',
-        component: EditorComponent
-      }
-    ]
-  },
-  {
     path: 'login',
     component: LoginComponent
+  },
+  { // 設計lazy loading時, 空路由(path: '')要放在下面, 不然部分比對時會被比對到
+    path: '',
+    component: MainComponent,
+    loadChildren: './posts/posts.module#PostsModule'
   },
   {
     path: '**',

@@ -12,8 +12,9 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginData: UserLogin;
 
+  loginData: UserLogin = {email: '', password: ''};
+  // 這邊需要給初始值, 因為在頁面Loading的時候沒有資料, 雙向繫節不可以用?號
   constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit() {}
