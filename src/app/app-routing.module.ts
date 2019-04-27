@@ -1,5 +1,5 @@
 import {
-  NgModule
+  NgModule, Component
 } from '@angular/core';
 import {
   RouterModule,
@@ -11,10 +11,32 @@ import {
 import {
   LoginComponent
 } from './auth/login/login.component';
+import { PostsComponent } from './posts/posts/posts.component';
+import { PostComponent } from './posts/post/post.component';
+import { EditorComponent } from './posts/editor/editor.component';
 
 const routes: Routes = [{
   path: '',
-  component: MainComponent
+  component: MainComponent,
+  children: [
+    {
+      path: '',
+      redirectTo: 'posts',
+      pathMatch: 'full'
+    },
+    {
+      path: 'posts',
+      component: PostsComponent
+    },
+    {
+      path: 'post/:id',
+      component: PostComponent
+    },
+    {
+      path: 'create',
+      component: EditorComponent
+    }
+  ]
 },
 {
   path: 'login',
