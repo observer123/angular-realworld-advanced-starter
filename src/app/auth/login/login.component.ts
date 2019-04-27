@@ -20,22 +20,22 @@ export class LoginComponent implements OnInit {
 
   login() {
     // 方法1: 單純的成功後轉頁，不會處理錯誤
-    this.userService.login(this.loginData).subscribe(result => {
-      console.log(result);
-      this.router.navigateByUrl('/');
-    });
+    // this.userService.login(this.loginData).subscribe(result => {
+    //   console.log(result);
+    //   this.router.navigateByUrl('/');
+    // });
 
     // 方法2: subscribe 內加上 next, error 方法處理錯誤
-    const observer: Observer<UserProfile> = {
-      next: (result: UserProfile) => {
-        console.log(result);
-        this.router.navigateByUrl('/');
-      },
-      error: (err: HttpErrorResponse) => {
-        alert((err.error as LoginError).body[0]);
-      },
-      complete: () => {}
-    };
+    // const observer: Observer<UserProfile> = {
+    //   next: (result: UserProfile) => {
+    //     console.log(result);
+    //     this.router.navigateByUrl('/');
+    //   },
+    //   error: (err: HttpErrorResponse) => {
+    //     alert((err.error as LoginError).body[0]);
+    //   },
+    //   complete: () => {}
+    // };
 
     // this.userService.login(loginData).subscribe(observer);
 
