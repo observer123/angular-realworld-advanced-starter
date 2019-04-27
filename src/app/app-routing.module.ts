@@ -29,6 +29,11 @@ const routes: Routes = [{
       component: PostsComponent
     },
     {
+      path: 'post',
+      redirectTo: 'posts',
+      pathMatch: 'full'
+    },
+    {
       path: 'post/:id',
       component: PostComponent
     },
