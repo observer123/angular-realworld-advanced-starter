@@ -12,7 +12,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginData: UserLogin;
+  loginData: UserLogin = {email: '', password: ''};
 
   constructor(private userService: UserService, private router: Router) {}
 
